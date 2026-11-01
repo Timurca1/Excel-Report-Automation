@@ -351,6 +351,29 @@ footer{background:#0f2136;color:#9fb4cb;padding:44px 0}
   .tk-btns .tk-btn{flex:1;text-align:center}
   .badge{font-size:13px;padding:9px 16px}
 }
+
+/* ============ Реальные скриншоты в окнах ============ */
+.win-shot {
+  padding: 0;
+  background: #0f1522;
+  line-height: 0;
+}
+.win-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 0 12px 12px;
+}
+/* Если фото слишком высокое/широкое — ограничим по высоте */
+.win-shot img {
+  max-height: 520px;
+  object-fit: contain;
+  background: #f4f6f8;
+}
+@media (max-width: 768px) {
+  .win-shot img { max-height: 380px; }
+}
+  
 </style>
 </head>
 <body>
@@ -501,71 +524,29 @@ footer{background:#0f2136;color:#9fb4cb;padding:44px 0}
 
       <!-- ОКНО 1: tkinter -->
       <div class="win reveal">
-        <div class="win-title">
-          <div class="dots"><i class="d-red"></i><i class="d-yel"></i><i class="d-grn"></i></div>
-          <span>Генератор отчётов</span>
-        </div>
-        <div class="tk-body">
-          <div class="tk-title">Генератор отчётов v2.1</div>
-          <div class="tk-sub">Автоматизация отчётности соцработника</div>
-
-          <div class="field">
-            <span class="ico">📄</span>
-            <span class="name">Файл: август 2026 v1.xlsx</span>
-          </div>
-
-          <div class="tk-btns">
-            <span class="tk-btn primary">Загрузить</span>
-            <span class="tk-btn secondary">Обработать</span>
-            <span class="tk-btn lite">Сохранить</span>
-          </div>
-
-          <div class="prog-label"><span>Обработка клиентов</span><span class="mono">75%</span></div>
-          <div class="prog"><div class="prog-fill" data-prog></div></div>
-
-          <div class="log">
-            <div class="dim">[14:02:11] Файл загружен: 30 записей</div>
-            <div class="dim">[14:02:12] База клиентов прочитана</div>
-            <div class="dim">[14:02:18] Заполнение шаблона .xls…</div>
-            <div class="ok">[14:02:34] Обработано 30 из 30 клиентов ✓</div>
-            <div class="dim">[14:02:35] Отчёт сохранён</div>
-          </div>
-        </div>
+      <div class="win-title">
+      
+      <span>Генератор отчётов</span>
       </div>
+      <div class="win-shot">
+      <img src="assets/excel-app.png" alt="Интерфейс программы генерации отчётов">
+    </div>
+  </div>
 
       <!-- ОКНО 2: Excel -->
       <div class="win reveal">
-        <div class="xl-title">
-          <div class="xlgrid"><i></i><i></i><i></i><i></i></div>
-          Отчёт 2026 — Excel
-        </div>
-        <div class="xl-tool">
-          <span class="xl-save">💾 Сохранить</span>
-          <span>Главная · Вставка · Формулы · Данные</span>
-        </div>
-        <table class="xltab">
-          <thead>
-            <tr>
-              <th style="width:38px">№</th>
-              <th>ФИО</th>
-              <th>Услуга</th>
-              <th>Дата</th>
-              <th>Время</th>
-              <th style="text-align:right">Стоимость</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="num">1</td><td>Иванов И.И.</td><td>Уход</td><td>12.08</td><td>45 мин</td><td class="cost">350 ₽</td></tr>
-            <tr><td class="num">2</td><td>Петрова А.С.</td><td>Кормление</td><td>12.08</td><td>30 мин</td><td class="cost">250 ₽</td></tr>
-            <tr><td class="num">3</td><td>Сидоров П.П.</td><td>Прогулка</td><td>12.08</td><td>60 мин</td><td class="cost">400 ₽</td></tr>
-            <tr><td class="num">4</td><td>Кузнецова М.В.</td><td>Уборка</td><td>13.08</td><td>50 мин</td><td class="cost">380 ₽</td></tr>
-            <tr><td class="num">5</td><td>Морозов В.А.</td><td>Гигиена</td><td>13.08</td><td>40 мин</td><td class="cost">320 ₽</td></tr>
-            <tr><td class="num">6</td><td>Волкова Е.Н.</td><td>Сопровождение</td><td>14.08</td><td>90 мин</td><td class="cost">600 ₽</td></tr>
-            <tr><td class="num">7</td><td>Новиков Д.С.</td><td>Помощь по дому</td><td>14.08</td><td>55 мин</td><td class="cost">900 ₽</td></tr>
-            <tr class="total"><td colspan="5" style="text-align:right">Итого:</td><td class="cost">3 200 ₽</td></tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="xl-title">
+    
+    Отчёт 2026 — Excel
+  </div>
+  <div class="xl-tool">
+    <span class="xl-save">💾 Сохранить</span>
+    <span>Главная · Вставка · Формулы · Данные</span>
+  </div>
+  <div class="win-shot">
+    <img src="assets/excel-report.png" alt="Готовый отчёт в Excel">
+  </div>
+</div>
 
     </div>
   </div>
